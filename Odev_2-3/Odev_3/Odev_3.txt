@@ -1,0 +1,15 @@
+stokta  1 ürün kaldığında butonun işlevselliği kapanıyordu  < yerine <=  koyduğumuzda durum düzeliyor.
+
+
+addItem metodunun içine product.stock -= quantity;  koyulmadığı için stokta eksilme olmuyordu bu durum değiştirildi.
+
+product.stock += item.quantity; 1 değeri sepetimizden sildiğimizde birden çok ekleme yapıyordu bu durum sabit bir değerle değiştirilip düzeltildi.
+
+removeItem metodunun içine document.dispatchEvent(new Event('stockUpdate')); koydum ki sepetimizden sildiğimizde stokları direkt güncellesin.
+
+return sum + item.price * item.quantity bu kısımda çarpım unutulduğu için sadece birer kez toplama yapılıyordu birden fazla tek üründen toplama yapılmıyordu bu düzeltildi.
+
+this.total *= 0.9; bu kısımda yüzde 10 indirim yerine yüzde 90 indirim yapılıyordu yanlış çarpma düzeltildi. 
+
+<span>${item.price * item.quantity} TL</span>    bu kısımda da aynı şekilde sepetteki hata giderildi.
+
